@@ -1,7 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  optimizeFonts: true,
-  basePath: "/",
-};
+const nextConfig = {};
 
 export default nextConfig;

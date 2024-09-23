@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/styles/globals.css";
+import { cn } from "@/lib/cn";
+import { ThemeProvider } from "@/providers/theme-provider";
+import { TooltipProvider } from "@/packages/components/overlay/tooltip";
+import { Toaster } from "@/packages/components/feedback/sonner";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -8,9 +12,10 @@ export const metadata: Metadata = {
 };
 
 const InterSans = Inter({
-  subsets: ["vietnamese", "latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
-  axes: ["opsz"],
+  preload: true,
+  style: "normal",
+  subsets: ["vietnamese", "latin"],
 });
 
 export default function RootLayout({
@@ -19,8 +24,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`antialiased ${InterSans.className}`}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={cn("antialiased", InterSans.className)}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <TooltipProvider delayDuration={50}>{children}</TooltipProvider>
+          <Toaster duration={3000} position="bottom-right" />
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
