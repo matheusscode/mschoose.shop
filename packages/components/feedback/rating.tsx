@@ -36,7 +36,11 @@ const Rating = React.forwardRef<HTMLDivElement, RatingProps>(
     };
 
     return (
-      <div {...props} ref={ref} className={cn("flex items-center ", className)}>
+      <div
+        {...props}
+        ref={ref}
+        className={cn("flex items-center gap-0.5 ", className)}
+      >
         {Array.from({ length: maxStars }, (_, index) => {
           const starIndex = index + 1;
           const isActive = hoverRating >= starIndex || rating >= starIndex;
@@ -46,7 +50,7 @@ const Rating = React.forwardRef<HTMLDivElement, RatingProps>(
               key={starIndex}
               xmlns="http://www.w3.org/2000/svg"
               className={cn(
-                "transition-all w-5 h-auto fill-current cursor-pointer text-gray-700",
+                "transition-all w-4 h-auto fill-current cursor-pointer text-gray-700",
                 isActive ? "text-gray-700" : ""
               )}
               viewBox="0 0 16 16"
