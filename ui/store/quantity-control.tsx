@@ -17,25 +17,25 @@ const QuantityControl = React.forwardRef<HTMLDivElement, QuantityControlProps>(
         {...props}
         ref={ref}
         className={cn(
-          "inline-flex flex-nowrap items-center overflow-hidden w-auto rounded-md border border-input",
+          "inline-flex flex-nowrap items-center overflow-hidden w-auto rounded-md border border-input !h-7",
           className
         )}
       >
         <Button
           size="icon"
           variant="ghost"
-          className="rounded-none"
+          className="rounded-none w-7 min-h-6 !px-0"
           onClick={onDecrement}
         >
           <MinusIcon />
         </Button>
-        <span className="min-h-9 min-w-9 select-none flex items-center justify-center">
+        <span className="min-w-6 min-h-9 select-none flex items-center justify-center">
           {count}
         </span>
         <Button
           size="icon"
           variant="ghost"
-          className="rounded-none"
+          className="rounded-none w-7 min-h-6 !px-0"
           onClick={onAdd}
         >
           <PlusIcon />
