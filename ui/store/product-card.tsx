@@ -29,7 +29,12 @@ const ProductCard = React.forwardRef<HTMLDivElement, ProductCardProps>(
             className="transition-all group-hover:opacity-60 opacity-100"
             title="Product name"
           >
-            <Image src={product} alt="" className="" priority />
+            <Image
+              src={product}
+              alt=""
+              className="group-hover:scale-110 transition-all"
+              priority
+            />
           </Link>
           <Button className="rounded-t-none group-hover:opacity-100 opacity-0 transition-all bottom-0 z-10 bg-neutral-950 text-white w-full absolute">
             Add to Cart
