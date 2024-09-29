@@ -21,18 +21,24 @@ const CommentCard = React.forwardRef<HTMLDivElement, CommentCardProps>(
           className
         )}
       >
-        <Avatar.Avatar className="size-10">
-          <Avatar.AvatarFallback className="font-normal text-base">
+        <Avatar.Avatar className="size-10 hidden md:inline-flex">
+          <Avatar.AvatarFallback className="font-normal text-base ">
             CN
           </Avatar.AvatarFallback>
         </Avatar.Avatar>
-
-        <div className="flex flex-col gap-0.5 justify-between">
-          <div className="flex w-full justify-between">
-            <Typography as="h1" className="text-base">
-              Customer name
-            </Typography>
-            <Rating />
+        <div className="flex flex-col gap-0.5 justify-center md:items-start md:justify-between ">
+          <div className="flex gap-1.5 w-full justify-between">
+            <div className="flex  items-center gap-2">
+              <Avatar.Avatar className="size-10 block md:hidden">
+                <Avatar.AvatarFallback className="font-normal text-base ">
+                  CN
+                </Avatar.AvatarFallback>
+              </Avatar.Avatar>
+              <Typography as="h1" className="text-base">
+                Customer name
+              </Typography>
+            </div>
+            <Rating className="order-1" />
           </div>
           <span className="uppercase text-muted-foreground">1 Week ago</span>
           <p className="text-muted-foreground">
@@ -40,7 +46,7 @@ const CommentCard = React.forwardRef<HTMLDivElement, CommentCardProps>(
             recusandae laudantium libero eius dignissimos laboriosam
             voluptatibus, ad quae quod.
           </p>
-          <Carousel.Carousel className="w-[500px] h-[500px] bg-neutral-50 rounded-md mt-2 border border-input">
+          <Carousel.Carousel className="m-auto md:m-0 w-full lg:w-[400px] bg-neutral-50 rounded-md mt-4 border border-input">
             <Carousel.CarouselContent className="h-[500px]">
               {Array.from({ length: 3 }).map((_, index) => (
                 <Carousel.CarouselItem key={index} className="h-full">
@@ -54,8 +60,8 @@ const CommentCard = React.forwardRef<HTMLDivElement, CommentCardProps>(
                 </Carousel.CarouselItem>
               ))}
             </Carousel.CarouselContent>
-            <Carousel.CarouselPrevious />
-            <Carousel.CarouselNext />
+            <Carousel.CarouselPrevious className="sm:flex hidden" />
+            <Carousel.CarouselNext className="sm:flex hidden" />
           </Carousel.Carousel>
         </div>
       </article>
