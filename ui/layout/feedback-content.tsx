@@ -14,6 +14,7 @@ export interface FeedbackContentProps
   title?: string;
   description?: string;
   pathname?: string;
+  label?: string;
   figure?: {
     src: string;
     alt: string;
@@ -26,6 +27,7 @@ const FeedbackContent = React.forwardRef<HTMLDivElement, FeedbackContentProps>(
       className,
       pathname = "/",
       title = "Nenhum item encontrado",
+      label = "Voltar para página anterior",
       description = "Parece que não há nenhum item disponível no momento. Tente novamente mais tarde ou verifique outras seções.",
       figure,
       ...props
@@ -69,7 +71,7 @@ const FeedbackContent = React.forwardRef<HTMLDivElement, FeedbackContentProps>(
           className="mt-12 gap-2 hover:gap-3 transition-all"
           onClick={pathname ? () => router.push(pathname) : () => router.back()}
         >
-          <span className="text-sm">Voltar para página anterior</span>
+          <span className="text-sm">{label}</span>
           <ArrowRightIcon size={21} />
         </Button>
       </div>
