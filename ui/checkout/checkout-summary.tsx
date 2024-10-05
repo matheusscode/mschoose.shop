@@ -3,7 +3,7 @@ import { cn } from "@/lib/cn";
 import * as Card from "@/components/data-display/card";
 import { Typography } from "@/packages/components/typography/typography";
 import { Button } from "@/packages/components/forms/button";
-import { DefLink } from "@/ui/layout/def-link";
+import { DefLink } from "@/ui/shared/def-link";
 import product from "/public/alt/product-cover.svg";
 import Image from "next/image";
 

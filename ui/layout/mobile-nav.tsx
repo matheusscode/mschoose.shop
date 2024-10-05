@@ -3,7 +3,7 @@
 import React from "react";
 import { cn } from "@/lib/cn";
 import { registry_links } from "@/registry/registry-links";
-import { DefLink } from "./def-link";
+import { DefLink } from "../shared/def-link";
 import { usePathname } from "next/navigation";
 
 export interface MobileNavProps extends React.HTMLAttributes<HTMLDivElement> {}

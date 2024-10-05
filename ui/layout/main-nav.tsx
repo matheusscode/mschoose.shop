@@ -5,7 +5,7 @@ import { cn } from "@/lib/cn";
 import Image from "next/image";
 import msChoose from "/public/brand.svg";
 import Link from "next/link";
-import { DefLink } from "./def-link";
+import { DefLink } from "../shared/def-link";
 import { CircleUserRoundIcon, ShoppingCartIcon } from "lucide-react";
 import { registry_links } from "@/registry/registry-links";
 import * as Navigation from "@/components/navigation/navigation-menu";

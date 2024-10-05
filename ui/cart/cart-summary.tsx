@@ -3,7 +3,7 @@ import { cn } from "@/lib/cn";
 import { Typography } from "@/packages/components/typography/typography";
 import { Button } from "@/packages/components/forms/button";
 import * as Card from "@/components/data-display/card";
-import { DefLink } from "@/ui/layout/def-link";
+import { DefLink } from "@/ui/shared/def-link";
 
 export interface CartSummaryProps
   extends React.HTMLAttributes<HTMLDivElement> {}

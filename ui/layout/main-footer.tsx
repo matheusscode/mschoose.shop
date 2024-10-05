@@ -2,7 +2,7 @@ import React from "react";
 import { cn } from "@/lib/cn";
 import { registry_sitemap } from "@/registry/registry-sitemap";
 import { Typography } from "@/packages/components/typography/typography";
-import { DefLink } from "./def-link";
+import { DefLink } from "../shared/def-link";
 import Image from "next/image";
 import msChoose from "/public/brand.svg";
 import { Separator } from "@radix-ui/react-separator";
