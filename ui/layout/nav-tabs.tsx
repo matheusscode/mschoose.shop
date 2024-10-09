@@ -6,6 +6,7 @@ import * as Tabs from "@/components/disclosure/tabs";
 import { TabsProps } from "@radix-ui/react-tabs";
 import { FeedbackContent } from "../shared/feedback-content";
 import { usePathname } from "next/navigation";
+import { Separator } from "@/packages/components/data-display/separator";
 
 export type Tab = {
   id: string;
@@ -68,8 +69,8 @@ const NavTabs = React.forwardRef<HTMLDivElement, NavTabsProps>(
         defaultValue={defaultValue}
       >
         <div className="flex flex-col w-full h-full md:flex-row gap-10">
-          <div className="flex flex-col h-full w-full md:w-[300px] gap-2.5 py-2">
-            <Tabs.TabsList className="!overflow-hidden !overflow-x-scroll md:!overflow-x-hidden gap-2.5 justify-stretch py-2.5 md:p-0 md:justify-center max-w-full md:max-w-[200px] bg-transparent flex flex-row md:flex-col w-full h-14 md:h-auto">
+          <div className="flex flex-col h-full w-full md:w-full md:min-w-[160px] gap-2.5 py-2">
+            <Tabs.TabsList className="rounded-none mt-0 md:mt-7 !overflow-hidden !overflow-x-scroll md:!overflow-x-hidden gap-2.5 justify-stretch py-2.5 md:p-0 md:justify-center bg-transparent flex flex-row md:flex-col w-full h-14 md:h-auto">
               {tabs.map((tab) => (
                 <Tabs.TabsTrigger
                   key={tab.id}
@@ -83,7 +84,7 @@ const NavTabs = React.forwardRef<HTMLDivElement, NavTabsProps>(
             </Tabs.TabsList>
           </div>
           <Tabs.TabsContent
-            className="w-full h-auto flex-none p-4"
+            className="w-full h-auto flex-none py-4 px-6 border-none md:border-l border-neutral-400/20"
             value={content.id}
           >
             {content.content}
