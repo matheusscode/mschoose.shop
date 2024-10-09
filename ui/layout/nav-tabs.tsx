@@ -6,7 +6,6 @@ import * as Tabs from "@/components/disclosure/tabs";
 import { TabsProps } from "@radix-ui/react-tabs";
 import { FeedbackContent } from "../shared/feedback-content";
 import { usePathname } from "next/navigation";
-import { Separator } from "@/packages/components/data-display/separator";
 
 export type Tab = {
   id: string;
