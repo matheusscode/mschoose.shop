@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 import { cn } from "@/lib/cn";
-import { ThemeProvider } from "@/providers/theme-provider";
 import { TooltipProvider } from "@/packages/components/overlay/tooltip";
 import { Toaster } from "@/packages/components/feedback/sonner";
+import { MobileNav } from "@/ui/layout/mobile-nav";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,16 +25,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn("antialiased", InterSans.className)}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <TooltipProvider delayDuration={50}>{children}</TooltipProvider>
-          <Toaster duration={3000} position="bottom-right" />
-        </ThemeProvider>
+      <body
+        className={cn("antialiased", InterSans.className)}
+        suppressHydrationWarning
+      >
+        <TooltipProvider delayDuration={50}>
+          {children}
+          <MobileNav />
+        </TooltipProvider>
+        <Toaster duration={3000} position="bottom-right" />
       </body>
     </html>
   );
