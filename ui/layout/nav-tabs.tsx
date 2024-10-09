@@ -84,7 +84,7 @@ const NavTabs = React.forwardRef<HTMLDivElement, NavTabsProps>(
             </Tabs.TabsList>
           </div>
           <Tabs.TabsContent
-            className="w-full h-auto flex-none py-4 px-6 border-none md:border-l border-neutral-400/20"
+            className="w-full h-auto flex-none py-4 px-6 border-l border-transparent md:border-neutral-400/20"
             value={content.id}
           >
             {content.content}
