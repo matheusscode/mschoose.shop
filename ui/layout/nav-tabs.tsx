@@ -67,13 +67,13 @@ const NavTabs = React.forwardRef<HTMLDivElement, NavTabsProps>(
         )}
         defaultValue={defaultValue}
       >
-        <div className="flex flex-col w-full md:flex-row gap-10 items-center">
-          <div className="flex flex-col w-full gap-2.5">
-            <Tabs.TabsList className="!overflow-hidden !overflow-x-scroll gap-2.5 justify-stretch py-2.5 md:p-0 md:justify-center max-w-full md:max-w-[200px] bg-transparent flex flex-row md:flex-col w-full h-14 md:h-auto">
+        <div className="flex flex-col w-full h-full md:flex-row gap-10">
+          <div className="flex flex-col h-full w-full md:w-[300px] gap-2.5 py-2">
+            <Tabs.TabsList className="!overflow-hidden !overflow-x-scroll md:!overflow-x-hidden gap-2.5 justify-stretch py-2.5 md:p-0 md:justify-center max-w-full md:max-w-[200px] bg-transparent flex flex-row md:flex-col w-full h-14 md:h-auto">
               {tabs.map((tab) => (
                 <Tabs.TabsTrigger
                   key={tab.id}
-                  className="w-full justify-center md:justify-start"
+                  className="w-full justify-center md:justify-start data-[state=active]:shadow-none"
                   value={tab.id ? tab.id : ""}
                   onClick={() => incrementEvent(tab)}
                 >
@@ -82,7 +82,10 @@ const NavTabs = React.forwardRef<HTMLDivElement, NavTabsProps>(
               ))}
             </Tabs.TabsList>
           </div>
-          <Tabs.TabsContent className="w-full h-full" value={content.id}>
+          <Tabs.TabsContent
+            className="w-full h-auto flex-none p-4"
+            value={content.id}
+          >
             {content.content}
           </Tabs.TabsContent>
         </div>
